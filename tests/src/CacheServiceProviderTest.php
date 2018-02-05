@@ -18,6 +18,10 @@ class CacheServiceProviderTest extends \PHPUnit\Framework\TestCase
         $dic->register( new CacheServiceProvider( $path, $lifetime) );
 
         $this->assertEquals( $lifetime, $dic['Cache.lifetime'] );
+
+        if (is_null($path)):
+            $path = sys_get_temp_dir();
+        endif;
         $this->assertEquals( $path, $dic['Cache.directory'] );
 
         $this->assertInstanceOf( CacheItemPoolInterface::class, $dic['Cache.ItemPool'] );
@@ -28,6 +32,7 @@ class CacheServiceProviderTest extends \PHPUnit\Framework\TestCase
     public function provideCtorData()
     {
         return array(
+            [ null, null ],
             [ "/tmp", 3600 ]
         );
     }
