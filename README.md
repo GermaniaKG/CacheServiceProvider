@@ -26,9 +26,14 @@ $dic = $app->getContainer();
 $dic = new Pimple\Container;
 
 // B. Register Service Provider, 
-// pass cache directoy and lifetime (seconds)
+// Defaults are unsecure!
+$csp = new CacheServiceProvider( );
+$csp = new CacheServiceProvider( sys_get_tmp_dir(), 3600);
+
+// Pass custom cache directoy and lifetime (seconds)
 $csp = new CacheServiceProvider( "path/to/cache", 3600);
 
+// or, leave at defaults: 
 $dic->register( $csp  );
 ```
 
