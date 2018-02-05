@@ -11,7 +11,7 @@ class CacheServiceProvider implements ServiceProviderInterface
     public $cache_lifetime;
     public $cache_dir;
 
-    public function __construct($cache_dir = null, $cache_lifetime = 0)
+    public function __construct($cache_dir = null, $cache_lifetime = 3600)
     {
         $this->cache_dir = $cache_dir ?: sys_get_temp_dir();
         $this->cache_lifetime = (int) $cache_lifetime;
