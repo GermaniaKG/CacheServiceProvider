@@ -25,8 +25,8 @@ $app = new \Slim\App;
 $dic = $app->getContainer();
 $dic = new Pimple\Container;
 
-// B. Register Service Provider.
-// Optionally pass length and strenth:
+// B. Register Service Provider, 
+// pass cache directoy and lifetime (seconds)
 $csp = new CacheServiceProvider( "path/to/cache", 3600);
 
 $dic->register( $csp  );
