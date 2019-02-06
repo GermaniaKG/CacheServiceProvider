@@ -1,37 +1,48 @@
 {
-	"name":        "germania-kg/cacheserviceprovider",
+    "name":        "germania-kg/cacheserviceprovider",
 
-	"type":        "library",
-	"license":     "proprietary",
+    "type":        "library",
+    "license":     "proprietary",
 
-	"authors": [
-		{
-			"name":  "Carsten Witt",
-			"email": "carstenwitt@germania-kg.de",
-			"role":  "Developer"
-		}
-	],
+    "authors": [
+        {
+            "name":  "Carsten Witt",
+            "email": "carstenwitt@germania-kg.de",
+            "role":  "Developer"
+        }
+    ],
 
-  "autoload": {
-      "psr-4": {
-          "Germania\\CacheServiceProvider\\": "src/"
-      }
-  },
+    "autoload": {
+        "psr-4": {
+            "Germania\\CacheServiceProvider\\": "src/"
+        }
+    },
 
-  "autoload-dev": {
-      "psr-4": {
-      	"tests\\": "tests/src"
-      }
-  },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/src"
+        }
+    },
 
-	"require": {
-		"phpFastCache/phpFastCache": "^5.0|^6.0",
-		"pimple/pimple": "^3.0",
-		"psr/cache": "^1.0"
-	},
+    "require": {
+        "php": "^5.6|^7.0",
+        "phpFastCache/phpFastCache": "^5.0|^6.0",
+        "pimple/pimple": "^3.0",
+        "psr/cache": "^1.0"
+    },
 
-	"require-dev": {
-			"satooshi/php-coveralls": "^1.0",
-			"phpunit/phpunit": "^5.7|^6.0"
-	}
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^2.0",
+        "phpunit/phpunit": "^5.7|^6.0|^7.0"
+    },
+
+    "scripts": {
+        "phpunit": "phpunit",
+
+        "test": [
+            "@phpunit"
+        ]
+    }
+
+
 }
