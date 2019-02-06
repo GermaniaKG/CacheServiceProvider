@@ -2,18 +2,18 @@
 
 **[Pimple Service Provider](https://pimple.symfony.com/#extending-a-container) for creating [phpFastCache](http://www.phpfastcache.com/) services**
 
-[![Build Status](https://travis-ci.org/GermaniaKG/CacheServiceProvider.svg?branch=master)](https://travis-ci.org/GermaniaKG/CacheServiceProvider)
-[![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/?branch=master)
+[![Packagist](https://img.shields.io/packagist/v/germania-kg/cacheserviceprovider.svg?style=flat)](https://packagist.org/packages/germania-kg/cacheserviceprovider)
+[![PHP version](https://img.shields.io/packagist/php-v/germania-kg/cacheserviceprovider.svg)](https://packagist.org/packages/germania-kg/cacheserviceprovider)
+[![Build Status](https://img.shields.io/travis/GermaniaKG/CacheServiceProvider.svg?label=Travis%20CI)](https://travis-ci.org/GermaniaKG/CacheServiceProvider)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/badges/build.png?b=master)](https://scrutinizer-ci.com/g/GermaniaKG/CacheServiceProvider/build-status/master)
 
-
-## Installation
+## Installation with Composer
 
 ```bash
 $ composer require germania-kg/cacheserviceprovider
 ```
-
 ## Setup
 
 ```php
@@ -48,13 +48,20 @@ Returns a *phpFastCache* instance.
 $itempool = $dic['Cache.ItemPool'];
 ```
 
+## Development
+
+```bash
+$ git clone https://github.com/GermaniaKG/CacheServiceProvider.git
+$ cd CacheServiceProvider
+$ composer install
+```
 
 ## Unit tests
 
-Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. 
-Run [PhpUnit](https://phpunit.de/) like this:
+Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. Run [PhpUnit](https://phpunit.de/) test or composer scripts like this:
 
 ```bash
+$ composer test
+# or
 $ vendor/bin/phpunit
 ```
-
